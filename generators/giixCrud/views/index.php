@@ -23,26 +23,14 @@ $('#{$class}_model').bind('keyup change', function(){
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'model'); ?>
-        <?php $form->widget('zii.widgets.jui.CJuiAutoComplete', array(
-            'model'=>$model,
-            'attribute'=>'model',
-            'source'=>$this->getModels(),
-            'options'=>array(
-                'delay'=>100,
-                'focus'=>'js:function(event,ui){
-                    $(this).val($(ui.item).val());
-                    $(this).trigger(\'change\');
-                }',
-            ),
-            'htmlOptions'=>array(
-                'size'=>'65',
-            ),
-        ));
-        ?>
+		<?php echo $form->textField($model,'model',array('size'=>65)); ?>
 		<div class="tooltip">
 			Model class is case-sensitive. It can be either a class name (e.g. <code>Post</code>)
-		    or the path alias of the class file (e.g. <code>application.models.Post</code>).
-		    Note that if the former, the class must be auto-loadable.
+		    or the path alias of the class file
+            <ul>
+                <li><code>application.models.Post</code></li>
+                <li><code>application.modules.admin.models.Post</code></li>
+            </ul>
 		</div>
 		<?php echo $form->error($model,'model'); ?>
 	</div>

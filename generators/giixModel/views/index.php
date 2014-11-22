@@ -100,7 +100,9 @@ $('.form .row.model-class').toggle($('#{$class}_tableName').val().substring($('#
 		<?php echo $form->textField($model,'modelPath', array('size'=>65)); ?>
 		<div class="tooltip">
 			This refers to the directory that the new model class file should be generated under.
-			It should be specified in the form of a path alias, for example, <code>application.models</code>.
+			It should be specified in the form of a path alias, for example,
+            <code>application.models</code>, <code>application.modules.admin.models</code>.
+
 		</div>
 		<?php echo $form->error($model,'modelPath'); ?>
 	</div>
