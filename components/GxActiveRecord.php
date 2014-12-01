@@ -323,7 +323,10 @@ abstract class GxActiveRecord extends CActiveRecord {
 			return $result;
 		}
 	}
-
+	public function primaryKey()
+	{
+	    return $this->getTableSchema()->primaryKey;
+	}
 	/**
 	 * Saves the current record and its MANY_MANY relations.
 	 * This method will save the active record and update
